@@ -21,9 +21,8 @@ jobs:
 
       - name: Build Docker image
         run: |
-        docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/churchcrm:${{ github.sha }} \
-                     -t ${{ secrets.DOCKERHUB_USERNAME }}/churchcrm:latest ./docker
-
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/churchcrm:${{ github.sha }} \
+                       -t ${{ secrets.DOCKERHUB_USERNAME }}/churchcrm:latest .
 
       - name: Push Docker images
         run: |
